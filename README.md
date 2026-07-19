@@ -7,18 +7,7 @@ This repository contains a Snowflake data-lakehouse assignment that ingests,
 cleans, and analyses a multi-country YouTube Trending Videos dataset.
 
 The dataset covers daily trending videos from 12 August 2020 through
-15 April 2024 for ten regions:
-
-  IN  India
-  US  United States
-  GB  Great Britain
-  DE  Germany
-  CA  Canada
-  FR  France
-  BR  Brazil
-  MX  Mexico
-  KR  South Korea
-  JP  Japan
+15 April 2024 for ten regions.
 
 Trending records are stored as CSV files and regional category mappings are
 stored as JSON files. The source files are placed in Azure Blob Storage and
