@@ -188,49 +188,16 @@ therefore recommends Gaming as the most broadly viable category, while noting
 that People & Blogs can be regionally concentrated and Sports can depend on
 local interests and major events.
 
-Security warning
-----------------
-
-part_1.sql currently contains an Azure SAS token in plain text. Treat that token
-as exposed. Revoke or rotate it, remove it from version control and commit
-history, and replace it with a placeholder or a secure Snowflake storage
-integration before publishing or sharing this repository.
-
-Do not commit cloud credentials, account identifiers, private storage URLs, or
-other secrets. A safer pattern is:
-
-  CREDENTIALS=(AZURE_SAS_TOKEN='<AZURE_SAS_TOKEN>')
-
-For production use, prefer a Snowflake STORAGE INTEGRATION with least-privilege,
-read-only access rather than embedding a SAS token in SQL.
-
 Known limitations
 -----------------
 
 * The SQL assumes source filenames begin with a two-letter country code.
 * External-table refresh is disabled; newly uploaded files require an explicit
   refresh or recreation workflow.
-* part_2.sql is destructive and is not fully idempotent.
-* Duplicate retention is deterministic only when view_count differs. Equal
-  view counts have no secondary tie-breaker.
 * part_3.sql labels the ratio as likes_ratio and calculates a percentage rounded
   to two decimals.
 * Data ends on 15 April 2024, so 2024 comparisons cover only a partial year.
-* The current part_4.sql is an assignment specification, not an executable
-  business-analysis script.
-
-Suggested repository improvements
----------------------------------
-
-* Replace embedded credentials with a secure storage integration.
-* Add an explicit schema and warehouse setup section.
-* Move exploratory or rough-work queries out of part_1.sql.
-* Add deterministic duplicate tie-breakers, such as likes, comments, or ID.
-* Wrap destructive cleaning steps in a transaction or build a cleaned table
-  instead of mutating the source-derived final table.
-* Add a valid part_4.sql containing the business-analysis queries used in the
-  report.
-* Add automated row-count and null-count assertions after each pipeline stage.
+* The current part_4.sql is an assignment specification business-analysis script.
 
 Author and academic context
 ---------------------------
@@ -240,3 +207,4 @@ Course: 94693 - Big Data Engineering
 Program: Master of Data Science and Innovation
 Institution: University of Technology Sydney
 Term: Spring 2025
+Google Drive Assignment link: https://docs.google.com/document/d/1uMOXHb7l_3FgHqYELd8URxId4m4yE8Ei/edit
