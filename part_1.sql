@@ -9,7 +9,7 @@ USE DATABASE assignment_1;
 --Creating stage with azure url and azure SAS token
 CREATE OR REPLACE STAGE stage_assignment
 URL='azure://ustbdeshreyash.blob.core.windows.net/bdeassignment1'
-CREDENTIALS=(AZURE_SAS_TOKEN='sv=2024-11-04&ss=b&srt=co&sp=rwdlaciytfx&se=2026-08-19T12:27:25Z&st=2025-08-19T04:12:25Z&spr=https&sig=aysFm4ZLtxaPrH12g3XguhZ%2B25AhzEHGFpXSYL%2BYHW0%3D')
+CREDENTIALS = (AZURE_SAS_TOKEN = '<AZURE_SAS_TOKEN>');
 ;
 
 list @stage_assignment;
